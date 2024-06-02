@@ -1,1 +1,8 @@
-
+def main():
+  total_amount = float(input("Enter the total amount received: "))
+  amount_per_person = total_amount / 3
+  print("\nAmount Split Details:")
+  print(f"Total Amount Received: ${total_amount:.2f}")
+  print(f"Each person receives: ${amount_per_person:.2f}")
+if __name__ == "__main__":
+  main()
