@@ -1,1 +1,10 @@
-
+def main():
+  last_name = input("Enter the student's last name: ")
+  midterm_score = float(input("Enter the midterm exam score: "))
+  final_score = float(input("Enter the final exam score: "))
+  total_points = (0.40 * midterm_score) + (0.60 * final_score)
+  print("\nStudent Exam Details:")
+  print(f"Student's Last Name: {last_name}")
+  print(f"Total Exam Points: {total_points:.2f}")
+if __name__ == "__main__":
+  main()
