@@ -1,1 +1,11 @@
-
+def calculate_investment(ticker, shares, cost_per_share):
+    amount_invested = shares * cost_per_share
+    return amount_invested
+ticker = input("Enter the stock ticker symbol: ")
+shares = float(input("Enter the number of shares: "))
+cost_per_share = float(input("Enter the cost per share: "))
+amount_invested = calculate_investment(ticker, shares, cost_per_share)
+print(f"\nStock Ticker: {ticker}")
+print(f"Number of Shares: {shares}")
+print(f"Cost Per Share: ${cost_per_share:.2f}")
+print(f"Amount Invested: ${amount_invested:.2f}")
