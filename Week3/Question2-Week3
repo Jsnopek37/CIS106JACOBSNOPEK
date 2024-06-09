@@ -1,0 +1,8 @@
+unit_prices = {'A': 10.00, 'B': 20.00}
+item = input("Enter the item (A or B): ").upper()
+quantity = int(input("Enter the quantity: "))
+unit_price = unit_prices.get(item, unit_prices['B'])
+extended_price = quantity * unit_price
+print(f"Item: {item}")
+print(f"Unit Price: ${unit_price:.2f}")
+print(f"Extended Price: ${extended_price:.2f}")
