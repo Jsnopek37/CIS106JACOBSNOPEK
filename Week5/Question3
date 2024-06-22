@@ -1,0 +1,16 @@
+student_count = 0
+while True:
+    start_program = input("Do you want to enter student data? (Enter 'Yes' to continue, any other input to stop): ")
+
+    if start_program.lower() != 'yes':
+        break
+    student_count += 1
+    last_name = input("Enter student's last name: ")
+    exam1 = float(input("Enter exam 1 score: "))
+    exam2 = float(input("Enter exam 2 score: "))
+    average_score = (exam1 + exam2) / 2
+    print(f"Student {last_name}: Average score = {average_score}")
+    continue_entry = input("Do you want to enter data for another student? (Enter 'Yes' to continue, any other input to stop): ")
+    if continue_entry.lower() != 'yes':
+        break
+print(f"Total number of students entered: {student_count}")
