@@ -1,0 +1,29 @@
+total_gross_pay = 0.0
+employee_count = 0
+while True:
+    start_program = input("Do you want to enter employee data? (Enter 'Yes' to continue, any other input to stop): ")
+    if start_program.lower() != 'yes':
+        break
+    employee_count += 1
+    last_name = input("Enter employee's last name: ")
+    hours_worked = float(input("Enter hours worked: "))
+    rate_of_pay = float(input("Enter rate of pay per hour: "))
+    if hours_worked <= 40:
+        gross_pay = hours_worked * rate_of_pay
+    else:
+        regular_pay = 40 * rate_of_pay
+        overtime_pay = (hours_worked - 40) * (rate_of_pay * 1.5)
+        gross_pay = regular_pay + overtime_pay
+    total_gross_pay += gross_pay
+    print(f"Employee {last_name}: Gross pay = ${gross_pay:.2f}")
+    continue_entry = input("Do you want to enter data for another employee? (Enter 'Yes' to continue, any other input to stop): ")
+    if continue_entry.lower() != 'yes':
+        break  
+if employee_count > 0:
+    average_pay = total_gross_pay / employee_count
+else:
+    average_pay = 0.0
+print("\nSummary:")
+print(f"Total number of employees: {employee_count}")
+print(f"Total gross pay: ${total_gross_pay:.2f}")
+print(f"Average pay: ${average_pay:.2f}")
