@@ -1,0 +1,22 @@
+total_discount_amount = 0.0
+while True:
+    start_program = input("Do you want to enter order data? (Enter 'Yes' to continue, any other input to stop): ")
+    if start_program.lower() != 'yes':
+        break  
+    quantity = float(input("Enter the quantity of the item: "))
+    price_per_item = float(input("Enter the price per item: "))
+    extended_price = quantity * price_per_item
+    if extended_price > 10000.00:
+        discount_rate = 0.25
+    else:
+        discount_rate = 0.10
+    discount_amount = extended_price * discount_rate
+    total_price = extended_price - discount_amount
+    total_discount_amount += discount_amount
+    print(f"Extended Price: ${extended_price:.2f}")
+    print(f"Discount Amount: ${discount_amount:.2f}")
+    print(f"Total Price: ${total_price:.2f}")
+    continue_entry = input("Do you want to enter data for another order? (Enter 'Yes' to continue, any other input to stop): ")
+    if continue_entry.lower() != 'yes':
+        break
+print(f"\nTotal discount amount for all orders: ${total_discount_amount:.2f}")
