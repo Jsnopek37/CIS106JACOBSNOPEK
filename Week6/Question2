@@ -1,0 +1,13 @@
+def fibonacci_sequence(n):
+  a, b = 1, 1
+  sequence = [a, b]
+  for _ in range(n - 2):
+      a, b = b, a + b
+      sequence.append(b)
+  return sequence
+n = 20
+sequence = fibonacci_sequence(n)
+print("The first 20 numbers in the Fibonacci sequence are:")
+for num in sequence:
+  print(num, end=", ")
+print("\b\b")
