@@ -1,0 +1,38 @@
+def compute_tuition(credit_hours, district_code):
+    """Compute tuition owed based on credit hours and district code."""
+    if district_code.upper() == 'I':
+        return credit_hours * 250
+    elif district_code.upper() == 'O':
+        return credit_hours * 550
+    else:
+        return 0
+
+def main():
+    students = []
+    total_tuition = 0
+
+    try:
+        while True:
+           
+            last_name = input("Enter student's last name: ")
+            credit_hours = int(input("Enter credit hours: "))
+            district_code = input("Enter district code (I for in-district, O for out-of-district): ")
+
+            
+            tuition = compute_tuition(credit_hours, district_code)
+            total_tuition += tuition
+
+            
+            students.append((last_name, tuition))
+
+    except EOFError:  
+        pass
+
+    
+    print("\nStudent Tuition Summary:")
+    for last_name, tuition in students:
+        print(f"Student: {last_name}, Tuition Owed: ${tuition:.2f}")
+    print(f"\nTotal Tuition Owed: ${total_tuition:.2f}")
+
+if __name__ == "__main__":
+    main()
