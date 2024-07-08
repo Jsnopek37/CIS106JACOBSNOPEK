@@ -1,0 +1,31 @@
+def get_pay_rate(job_code):
+    if job_code == 'L':
+        return 25.0
+    elif job_code == 'A':
+        return 30.0
+    elif job_code == 'J':
+        return 50.0
+    else:
+        return 0.0  
+total_gross_pay = 0.0
+while True:
+    try:
+
+        last_name = input("Enter employee's last name (or Ctrl+Z to stop): ")
+        job_code = input("Enter job code (L, A, J): ")
+        hours_worked = float(input("Enter hours worked: "))
+        pay_rate = get_pay_rate(job_code)
+        if hours_worked <= 40:
+            gross_pay = hours_worked * pay_rate
+        else:
+            regular_hours = 40
+            overtime_hours = hours_worked - 40
+            gross_pay = (regular_hours * pay_rate) + (overtime_hours * pay_rate * 1.5)
+        print(f"Employee: {last_name}, Gross Pay: ${gross_pay:.2f}")
+        total_gross_pay += gross_pay
+
+    except EOFError:  
+        break
+    except ValueError:
+        print("Invalid input. Please enter valid numeric hours worked.")
+print(f"\nTotal of all gross pays: ${total_gross_pay:.2f}")
