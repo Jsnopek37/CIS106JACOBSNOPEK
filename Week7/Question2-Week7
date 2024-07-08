@@ -1,0 +1,32 @@
+def compute_batting_average(hits, at_bats):
+  if at_bats == 0:
+      return 0
+  return hits / at_bats
+
+def main():
+  player_count = 0
+  print("Enter player details. Use Ctrl+Z (Ctrl+D on Unix/Mac) to stop.")
+
+  while True:
+      try:
+          last_name = input("Enter player's last name: ").strip()
+          if not last_name:
+              continue
+
+          hits = int(input("Enter number of hits: "))
+          at_bats = int(input("Enter number of at-bats: "))
+      except EOFError:
+          break
+      except ValueError:
+          print("Invalid input. Please enter numerical values for hits and at-bats.")
+          continue
+
+      batting_average = compute_batting_average(hits, at_bats)
+      print(f"Last Name: {last_name}, Batting Average: {batting_average:.3f}")
+
+      player_count += 1
+
+  print(f"Total number of players entered: {player_count}")
+
+if __name__ == "__main__":
+  main()
