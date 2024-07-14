@@ -1,0 +1,80 @@
+# 1. Prompt the user for a number and create a list with that many integers
+num_items = int(input("Enter the number of items for the list: "))
+my_list = []
+
+for i in range(num_items):
+    num = int(input(f"Enter integer {i+1}: "))
+    my_list.append(num)
+
+print("Initial list:", my_list)
+
+# 2. Insert the score of 99 at position 1 within the list
+my_list.insert(1, 99)
+print("List after inserting 99 at index 1:", my_list)
+
+# 3. Replace the value of 99 with the value 100
+index_of_99 = my_list.index(99)
+my_list[index_of_99] = 100
+print("List after replacing 99 with 100:", my_list)
+
+# 4. Create a second list and extend the first list with it
+second_list = [500, 600, 700, 800, 900]
+print("Second list:", second_list)
+
+my_list.extend(second_list)
+print("First list after extending with second list:", my_list)
+
+# 5. Remove the value 800 from the first list
+my_list.remove(800)
+print("List after removing the value 800:", my_list)
+
+# 6. Remove the third item from the first list
+my_list.pop(2)
+print("List after removing the third item:", my_list)
+
+# 7. Create a list of grades
+grades = ["A", "B", "C", "A", "A", "C"]
+print("Grades list:", grades)
+
+# 8. Display a count of the number of A grades
+count_A = grades.count("A")
+print("Number of A grades:", count_A)
+
+# 9. Display the index (position) of the first B grade
+index_B = grades.index("B")
+print("Index of the first B grade:", index_B)
+
+# 10. Look for grade of F in the grades list
+if "F" in grades:
+    print("Grade F is in the list")
+else:
+    print("Grade F is not in the list")
+
+# 11. Clear (but do not delete) the second list of integers
+second_list = [500, 600, 700, 800, 900]  # Recreate the second list for this task
+second_list.clear()
+print("Second list after clearing:", second_list)
+
+# 12. Delete the second list. Try to display it.
+del second_list
+try:
+    print(second_list)
+except NameError:
+    print("Second list no longer exists")
+
+# 13. Create a list of players
+players = ["Rizzo", "Davis", "Baez", "Happ", "Bryan"]
+print("Players list:", players)
+
+# 14. Sort the list of players
+players.sort()
+print("Sorted players list:", players)
+
+# 15. Make a copy of the list of players called players2
+players2 = players.copy()
+print("Players2 list:", players2)
+
+# 16. Reverse the order of players2
+players2.reverse()
+print("Players list:", players)
+print("Players2 list after reversing:", players2)
